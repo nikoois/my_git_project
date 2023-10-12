@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snake Game</title>
+</head>
+<body>
+
+    <canvas id="mc" width="625"></canvas>
+
+    <script>
+        window.onload = function() {
+            // basic setup
+
+            canv = documant.getElementById("mc");
+            cxt = canv.getContext("2d")
+            document.addEventListener("keydown", keyPush);
+            setInterval(game, 1000/15);
+        }
+
+        var
+            xv = yv = 0, // x & v velocity
+            px = py = ~~(25 / 2), // player x & y positions
+            gs = tc = 25, // grid size & tiles count (25 * 25 = 625)
+            ax = ay = 20, // apple position (and starting pos)
+            trail = [], // snake elementstrail (format {x: 0, y: 0})
+            tail = tailBaseSize = 3; // current tail elements size (and starting val)
+
+        function game()
+        {
+            // game main loop (15 fps)
+            px += xv;
+            py += yv;
+
+            if( px < 0 ) {px = tc - 1;}
+            if( px > tc - 1 ) {px = 0;}
+
+            if( py < 0 ) {py = tc - 1;}
+            if( py > tc - 1 ) {py = 0;}
+
+            // paint it black!)
+            ctx.fillStyle = "black";
+            ctx.fillRect(0, 0, canv.width, canv.height);
+
+            // paint the snake (solid, btw)
+            ctx.fillStyle = "green";
+            for( var i = 0; i < trail.length; i++ )
+            {
+                // fill the trail elements
+                ctx.fillRect(trail[i].x * gs, trail[i].y * gs, gs - 2, gs - 2);
+                // * NOTE: gs - 2 cuz gap is required (lol)
+
+                if( trail[i].x == px && trail[i].y == py )
+                {
+                    // you're done (restart the tail base size)
+                    tail = tailBaseSize;
+                }
+            }
+
+            // remember the pos
+            trail.push({x: px, y: py});
+
+            // push the limits (lol)
+            while( trail.length > tail )
+            {
+                trail.shift();
+            }
+
+            // got the apple, add tail element
+            if( ax == px && ay == py )
+            {
+                tail++;
+                spawnNextAppe(); // outer func, cuz ... becuz (lol)
+            }
+
+            // paint the little green bag (no, apple)
+            ctx.fillStyle = "red";
+            ctx.fillRect(ax * gs, ay * gs, gs - 2, gs - 2)
+        }  
+
+        function spawnNextApple()
+        {
+            ax = Math.floor(Math.random() * tc);
+            ay = Math.floor(Math.random() * tc);
+
+            // forbid spawning apple at the trail positions (somewhat)
+            for( var i = 0; i < trail.length; i++ )
+            {
+                if( trail[i].x == ax && trail[i].y == ay )
+                {
+                    // respawn
+                    spawnNextApple();
+                }
+            }
+        }
+
+        function keyPush(evt)
+        {
+            switch( evt.keyCode )
+            {
+                case 37:
+                    // left arrow key (revert x velosity)
+                    xv = -1;
+                    yv = 0;
+                    break;
+                case 38:
+                    // up arrow key (revert x velosity)
+                    xv = 0;
+                    yv = -1;
+                    break;
+                case 39:
+                    // right arrow key (force x velosity)
+                    xv = 1;
+                    yv = 0;
+                    break;
+                case 40:
+                    // down arrow key (force y velosity)
+                    xv = 0;
+                    yv = 0;
+                    break;      
+            }
+        }
+    </script>
+
+</body>
+</html>
