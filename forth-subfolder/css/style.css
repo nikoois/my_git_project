@@ -409,18 +409,30 @@ body {
 /* =========================================== */
 
 .stay-safe {
-    padding: 80px 0;
+    padding: 80px 0;    
 }
 .stay-safe__conteiner {
+    display: flex;
+    align-items: center;
 }
 .stay-safe__media {
+    flex: 0 1 50%;
+    padding: 0% 0% 0% 47px;
 }
 .stay-safe__content {
+    flex: 0 1 50%;
 }
 .stay-safe__block-text {
 }
 
 .media-stay-safe {
+    width: 373px;
+    padding: 56px 0px 27px 0px;
+    text-align: center;
+    position: relative;
 }
 .media-stay-safe__image {
+    display: inline-block;
+    box-shadow: 2px 4px 32px  rgba(0, 0, 0, 0.12);
+    border-radius: 16px;
 }
