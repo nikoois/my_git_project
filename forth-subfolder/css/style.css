@@ -435,4 +435,19 @@ body {
     display: inline-block;
     box-shadow: 2px 4px 32px  rgba(0, 0, 0, 0.12);
     border-radius: 16px;
+    position: relative;
+}
+.media-stay-safe__image img{
+    position: relative
+    z-index 2;
+}
+.media-stay-safe__image::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 12px;
+    width: 206px;
+    height: 27px;
+    background-color: rgba(240, 240, 240, 0.49);
+    border-radius: 16px;
 }
