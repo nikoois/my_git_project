@@ -503,33 +503,74 @@ body {
 /* ============================================================= */
 
 .experts {
-    background-color: hsl(220, 43%, 99%);
-    padding: 53px 0px 113px 0px;
+    background-color: #fafbfd;
+    padding: 103px 0px 116px 0px;
 }
 .experts__container {
 }
 .experts__statistics {
 }
 .statistics-experts {
+    max-width: 655px;
+    margin 0px auto;
+    position: relative;
 }
 .statistics-experts__body {
+    background-color: #fff;
+    border-radius: 0px 2px 24px rgba(88, 126, 236, 0.15);
+    border-radius: 16px;
+    position: relative;
+    z-index: 2;
 }
 .statistics-experts__decor {
+    position: absolute;
+    background-color: #ec5863;
+    border-radius: 30px;
 }
 .statistics-experts__decor_1 {
+    width: 65px;
+    height: 65px;
+    transform: rotate(-30deg);
+    bottom: -21px;
+    left: -21px;
+    border-radius: 16;
 }
 .statistics-experts__decor_2 {
+    width: 97px;
+    height: 97px;
+    right: 50%;
+    top: -40px;
+    transform: rotate(30deg);
 }
 .statistics-experts__decor_3 {
 }
 
 .body-statistics-experts {
+    padding: 20px 80px;
+    display: flex;
+    align-items: center;
 }
 .body-statistics-experts__item {
+    flex: 0 1 25%;
+    text-align: center;
+}
+.body-statistics-experts__item:last-child {
+    flex: 0 1 25%;
 }
 .body-statistics-experts__value {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    color: #ec5863;
 }
 .body-statistics-experts__text {
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 1.8;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #000000;
 }
 
 
