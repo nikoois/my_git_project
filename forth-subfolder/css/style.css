@@ -510,17 +510,59 @@ body {
 }
 .experts__statistics {
 }
+.experts__block-text {
+    max-width: 400px;
+}
 .statistics-experts {
     max-width: 655px;
-    margin 0px auto;
+    margin: 0px auto;
     position: relative;
 }
+.experts__body {
+    display: flex;
+    align-items: center;
+}
+.experts__content {
+    flex: 0 1 50%;
+    padding: 0px 20px 0px 0px;
+}
+.experts__video {
+    flex: 0 1 50%;
+    padding: 0px 0px 30% 0px;
+    position: relative;
+}
+.experts__video iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+@media (max-width: 767.98px) {
+    .experts {
+        padding: 103px 0px 116px 0px;
+    }
+    .experts__body {
+        align-items: stretch;
+        flex-direction: column;
+    }
+    .experts__video {
+        padding: 0px 0px 58% 0px;
+    }
+    .experts__content {
+        padding: 0;
+        margin: 0px 0px 30px 0px;
+    }
+}
+
 .statistics-experts__body {
     background-color: #fff;
     border-radius: 0px 2px 24px rgba(88, 126, 236, 0.15);
     border-radius: 16px;
     position: relative;
     z-index: 2;
+    margin: 0px 0px 80px 0px;
 }
 .statistics-experts__decor {
     position: absolute;
@@ -543,10 +585,15 @@ body {
     transform: rotate(30deg);
 }
 .statistics-experts__decor_3 {
+    width: 128px;
+    height: 128px;
+    right: -55px;
+    top: 0px;
+    transform: rotate(-30deg);
 }
 
 .body-statistics-experts {
-    padding: 20px 80px;
+    padding: 25px 80px;
     display: flex;
     align-items: center;
 }
@@ -555,7 +602,7 @@ body {
     text-align: center;
 }
 .body-statistics-experts__item:last-child {
-    flex: 0 1 25%;
+    flex: 0 1 50%;
 }
 .body-statistics-experts__value {
     font-weight: 700;
@@ -563,6 +610,7 @@ body {
     line-height: 1.2;
     letter-spacing: 1px;
     color: #ec5863;
+    margin-bottom: 5px;
 }
 .body-statistics-experts__text {
     font-weight: bold;
@@ -574,3 +622,11 @@ body {
 }
 
 
+@media (max-width 767.98px) {
+    .statistics-experts__body {
+        margin: 0px 0px 50px 0px;
+    }
+    .body-statistics-experts {
+        padding: 25px 30px;
+    }
+}
