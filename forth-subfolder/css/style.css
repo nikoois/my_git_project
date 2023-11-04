@@ -666,6 +666,7 @@ body {
     /* gap: 72px; */
 }
 .healthcare__column {
+    position: relative;
     padding: 0px 36px;
     flex:  0 1 33.333%;
 }
@@ -700,15 +701,15 @@ body {
 }
 
 
-.item-healthcare_1::before,
-.item-healthcare_1::after {
+.healthcare__column_1::before,
+.healthcare__column_1::after {
     position: absolute;
     content: "";
     background-color: #ec5863;
     border-radius: 16px;
 }
 
-.items-healthcare__1::before {
+.healthcare__column_1::before {
     width: 65px;
     height: 65px;
     bottom: 0;
