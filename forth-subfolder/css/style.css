@@ -675,6 +675,7 @@ body {
 }
 
 .item-healthcare {
+    height: 100%;
     position: relative;
     z-index: 2;
     background:  #ffffff;
@@ -749,3 +750,30 @@ body {
     border-radius: 16px;
     transform: rotate(45deg);
 }
+@media (max-width: 1087px) {
+    .healthcare__column {
+        padding: 0px 15px;
+    }
+}
+@media (max-width: 991.98px) {
+    .healthcare__items {
+        flex-direction: column;
+    }
+}
+
+/* =============================================================================== */
+
+.footer {
+    padding: 45px 0;
+}
+.footer__container {
+}
+.footer__items {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.footer__item {
+}
+
