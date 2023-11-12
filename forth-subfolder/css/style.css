@@ -776,7 +776,8 @@ body {
 }
 .footer__items {
     display: flex;
-    gap: 50px;
+    column-gap: 50px;
+    row-gap: 20px;
     justify-content: center;
     align-items: center;
 }
